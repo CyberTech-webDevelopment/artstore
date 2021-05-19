@@ -156,3 +156,50 @@ tbody>tr>td:not(:second-child){
 #add-new-product-button{
 	border: none;
 }
+canvas{
+    border: 2px solid green;
+    overflow: hidden;
+}
+/*.canvas-cont{
+	display: flex;
+}*/
+.input-file-container{
+	display: none;
+    width: 300px;
+    height: 300px;
+    border: 1px solid orange
+}
+#canvas-wrap { 
+	position:relative 
+}
+.image-cont-item{
+	width: 200px;
+	height: auto;
+}
+.image-cont-item img{
+	width: 100%;
+	height: auto;
+}
+.uploade-image{
+	height: 174px
+}
+.edit-img button{
+	border: none;
+	outline: none;
+	background: none
+}
+input:focus{
+	outline: none;
+}
+.canvas-cont:focus{
+	outline: none;
+}
+button:focus{
+	outline: none;
+}
+input:active{
+	outline: none;
+}
+button:active{
+	outline: none;
+}

@@ -13,6 +13,8 @@
 <link rel="stylesheet" type="text/css" href="account/css/create-store.css">
 <link rel="stylesheet" type="text/css" href="account/css/seller-add-products.css">
 <link rel="stylesheet" type="text/css" href="account/css/delete-products.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.16/fabric.min.js"></script>
 
 <style>
   /*@media (max-width: 485px) {
@@ -98,6 +100,7 @@
 <script src="account/js/account-bar.js"></script>
 <script src="account/js/account-settings-address.js"></script>
 <script src="account/js/account-welcome-seller.js"></script>
+<script src="account/js/add-product.js"></script>
 <script>
   $('.h5-click').click(function(){
      $('#store-style').toggleClass('hide-style')

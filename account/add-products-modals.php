@@ -1,4 +1,12 @@
 
+<?php
+   include 'config/config.php';
+   include "lng.php";
+
+   $sql_categories_menu="SELECT id, menu_name_$lng AS 'menu_name' FROM menu";
+   $result_menu=mysqli_query($con, $sql_categories_menu);
+
+?>
 <!-- ----------------------modal add product------------------------------ -->
 
 <div class="modal fade add-product-modal" tabindex="-1" id="add-product-modal" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -12,24 +20,28 @@
       </div>
       <div class="modal-body">
           <div class="row pl-1 pr-0">
-           <div class="d-flex col-4"> 
-                <div><img src="images/andrijana1.png" class="modal-product-img"></div>
-                <div class="pl-2">
-                  <img src="icons/edit.png">
+           <div class="canvas-cont hide ml-auto mr-auto" tabindex="3">
+              <canvas id="canvas" ></canvas>
+              <div class="ml-1 edit-img">
+                  <button id="crop-image"><i class='fas fa-crop' style='font-size:24px' ></i></button>
                   <p></p>
-                  <img src="icons/close.png">
-                </div>
+                  <button class="delete-image"><img src="icons/close.png"></button>
+              </div>
            </div>
-           <div class="d-flex col-4 ">
-                <div class="modal-drag-photo pt-4">
-                    <!-- <dir><img src="images/seller-images/1.png"></dir> -->
+           <div class="d-flex col-4 uploade-image">
+                <div class="modal-drag-photo py-4 input-file-trigger text-center">
                     <div class="text-center"><img src="icons/upload.png"></div>
                     <div class="font-size-14 text-center pt-3">Drag photo to upload</div>
                     <div class="font-size-14 text-center">or</div>
-                    <div class="text-center pt-2"><label class="browse font-size-12 text-strong"><input type='file'>Browse</label></div>
+                    <label for="fileupload" class="browse font-size-12 text-strong" id='labelFU' tabindex="0">
+                               Browse
+                              <input class="input-file" id="fileupload" name="files" type="file" multiple > 
+                        </label>
+                    <div id='divHabilitSelectors' class="input-file-container text-center pt-2 input-file-trigger"></div>
                 </div>
                 <div></div>
             </div>
+              <div id="image-cont" class="d-flex"></div>
        </div>
        <div class="row pl-3 pr-0 mt-3">
         <div class="inputs-group pl-0 pr-0">
@@ -42,16 +54,18 @@
         <div class="row pl-0 pr-0 mt-3 select-group-1">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-10">
               <label>Category</label>
-              <select>
-                  <option></option>
-                  <option></option>
+              <select id="select-menu">
+                <?php
+                while($row=mysqli_fetch_assoc($result_menu)){
+                    echo "<option data-menu-id='".$row['id']."'>".$row['menu_name']."</option>";
+                }
+                ?>
               </select>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-10">
               <label>Subcategory</label>
-              <select>
-                  <option></option>
-                  <option></option>
+              <select id="select-sub-menu">
+                 
               </select>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-10">
