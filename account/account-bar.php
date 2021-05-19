@@ -35,7 +35,7 @@
 		      
 		      <a class="nav-link d-flex justify-content-between acount-bar-item" data-name="wallet" id="v-pills-wallet-tab" data-toggle="pill" href="#v-pills-wallet" role="tab" aria-controls="v-pills-wallet" aria-selected="false"><div class="font-size-16"><img src="icons/wallet.png"><span class="pl-2">Wallet</span></div><span class="new-int">$2600</span></a>
 		      
-		      <a class="nav-link d-flex justify-content-between acount-bar-item acount-bar-type-item" onclick="fff()" id="add-product-a" data-type="seller" data-toggle="modal" data-target=".add-product-modal" aria-selected="false" ><div class="font-size-16 text-danger">Add new product</div></a>
+		      <a class="nav-link d-flex justify-content-between  acount-bar-type-item" onclick="fff()" id="add-product-a" data-type="seller" data-toggle="modal" data-target=".add-product-modal" aria-selected="false" ><div class="font-size-16 text-danger">Add new product</div></a>
         </div>
         <div class="acount-nav-footer pt-4 pb-4 border-top">
 	    	<div>

@@ -5,24 +5,25 @@ $('.account-open-bar').click(function(){
 })
 
 $('.acount-bar-item').click(function(){
-        let $new_src=''
-        let $all_src=$(this).find('img').attr('src')
+        let new_src=''
+        let all_src=$(this).find('img').attr('src')
+        console.log(all_src)
         $('.acount-nav').removeClass('show-nav')
         $('.account-open-bar').removeClass('fade')
         $('.acount-bar-item').each(function(){
-            let $src=$(this).attr('data-name')
-            $(this).find('img').attr('src', 'icons/'+$src+'.png')
+            let src=$(this).attr('data-name')
+            $(this).find('img').attr('src', 'icons/'+src+'.png')
         })
          if($(this).hasClass('active')){
             
-            $new_src=$all_src
+            new_src=all_src
          }
          else{
-          let $extention=$all_src.split('.')
-           $new_src=$extention[0]+'-active.png'
+          let extention=all_src.split(".")
+           new_src=extention[0]+'-active.png'
          }
 
-        $(this).find('img').attr('src', $new_src)
+        $(this).find('img').attr('src', new_src)
    })
 
 // -----------------when open modal-------------------
